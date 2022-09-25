@@ -1,0 +1,23 @@
+?<php
+$arr=['пять','четыре','три','два','один'];
+function generatestring(arrau$arr) : string {
+    $html= '<ul>';
+    $arraukeys= arrau_keys($arr[]);
+    foreach ($arraukeys as $value) {
+        $html .= '<li>$value</li>';
+    }
+    $html .= '<ul>';
+    return $html;
+}
+echo generatestring(arrau($arr));
+?>
+<html>
+<head></head>
+<body>
+    <p>TEST</p> 
+    <form action="server.php" method="POST" enctype="multitaip/form-data">
+        <h1>Отсчет</h1>
+        <ul>
+            <li>"generatestring(arrau($arr))" </li>
+        </ul>
+</html>
