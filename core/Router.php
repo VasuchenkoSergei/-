@@ -4,16 +4,37 @@
 свойства класса.
 Необходимо подключить в index.php используя namespace класс Router*/
 
-namespace core;
+namespace Core;
 
 class Router 
 {
-    public $a= 5;
-    public function run($a)
+    public $a;
+    public function run($name)
     {
-        var_export ($this-> a);  
+        echo '<pre>';
+        var_dump($_SERVER["REQUEST_URL"]);
+        echo '</pre>';
+$str = substr($_SERVER["REQUEST_URL"],1);
+$exp = (explode("/",$str));
+
+if (empty($exp(0))) 
+{
+    $className = 'Admin';
+}
+else 
+{
+    $className = $exp[0];
+}
+$classPath = 'App\Controllers\\'.$className;
+if (class_exists($classPath))
+{
+    $obj = new $classPath;
+}
+else 
+{
+    $obj = new App\Controllers\Home;
+}
     }
-    $obj = new Router;
-    echo $obj->run(7);
+   $obj->index(); 
 }
 ?>
