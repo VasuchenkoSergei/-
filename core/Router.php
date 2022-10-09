@@ -1,10 +1,6 @@
 <?php
-/*Необходимо создать в папке core класс Router
-В Router создать метод run() который будет через var_export выдавать 
-свойства класса.
-Необходимо подключить в index.php используя namespace класс Router*/
-
 namespace Core;
+use App\Controllers\Home;
 
 class Router 
 {
@@ -14,6 +10,7 @@ class Router
         echo '<pre>';
         var_dump($_SERVER["REQUEST_URL"]);
         echo '</pre>';
+    
 $str = substr($_SERVER["REQUEST_URL"],1);
 $exp = (explode("/",$str));
 
@@ -32,7 +29,7 @@ if (class_exists($classPath))
 }
 else 
 {
-    $obj = new App\Controllers\Home;
+    $obj = new Home;
 }
     }
    $obj->index(); 
