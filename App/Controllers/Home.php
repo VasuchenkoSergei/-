@@ -5,10 +5,10 @@ use Core\View;
 
 class Home
 {
-pablic function index() 
+public function index() 
 {
     $obj = new Pages;
-    $path = ' view1';
+    $path = 'view1';
     $data['people'] = $obj->getAll();
     View::generate($path, $data);
     var_dump ($obj->getAll());

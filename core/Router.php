@@ -1,37 +1,51 @@
 <?php
 namespace Core;
-use App\Controllers\Home;
+use App\Controllers\Eror;
 
 class Router 
 {
-    public $a;
-    public function run($name)
-    {
-        echo '<pre>';
-        var_dump($_SERVER["REQUEST_URL"]);
-        echo '</pre>';
-    
-$str = substr($_SERVER["REQUEST_URL"],1);
-$exp = (explode("/",$str));
+    private $exp;
+    private $config = [];
 
-if (empty($exp(0))) 
-{
-    $className = 'Admin';
-}
-else 
-{
-    $className = $exp[0];
-}
-$classPath = 'App\Controllers\\'.$className;
-if (class_exists($classPath))
-{
-    $obj = new $classPath;
-}
-else 
-{
-    $obj = new Home;
-}
+    public function __construct()
+    {
+        $this->exp = substr($_SERVER ["REQUEST_URI"],1);
+        $this->config = include_once (__DIR__) . '/../app/config/config.php';
     }
-   $obj->index(); 
+
+    public function run()
+    {
+        if (array_key_exists($this->exp, $this->config)) {
+            $classPath = 'App\Controllers\\' . $this->getClassName();
+        } else {
+            $obj = new Eror;
+        }
+        $classPath = 'App\Controllers\\' . $this->getClassName();
+            if (class_exists($classPath)) {
+                $obj = new $classPath;
+            } else {
+                $obj = new Error();
+            }
+            $methodName = $this->getMethodName();
+
+            if (method_exists($obj, $methodName)) {
+                $obj->$methodName();
+            } else {
+                (new Error)->index();
+            }
+    }
+
+    private function getMethodName(): string
+    {
+        $exp1 = explode(':',$this->config[$this->exp]);
+        return $exp1 [1];
+    }
+
+    private function getClassName(): string
+    {
+        $exp = explode(':',$this->config[$this->exp]);
+        return $exp [0];
+    }
 }
+
 ?>
