@@ -5,5 +5,7 @@ return [
     'home/edit'=>'Home:edit',
     'admin'=>'Admin:index',
     'admin/home'=>'Admin:index',
-    'admin/home/edit'=>'Admin:edit'
+    'admin/home/edit'=>'Admin:edit',
+    'user'=>'User:index',
+    'user/edit'=>'User:edit',
 ];

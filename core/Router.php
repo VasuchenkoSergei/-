@@ -18,7 +18,7 @@ class Router
         if (array_key_exists($this->exp, $this->config)) {
             $classPath = 'App\Controllers\\' . $this->getClassName();
         } else {
-            $obj = new Eror;
+            $classPath = new Eror;
         }
         $classPath = 'App\Controllers\\' . $this->getClassName();
             if (class_exists($classPath)) {

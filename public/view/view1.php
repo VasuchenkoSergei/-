@@ -12,7 +12,7 @@
     <?php foreach($people as $currentPeople)  : ?>
         <ul>
             <?php //foreach($currentPeople as $user)  : ?>
-                <li><?=print_r($currentPeople);?></li>
+                <li><?=var_dump($currentPeople);?></li>
             <?php //endforeach; ?>
         </ul>
 
