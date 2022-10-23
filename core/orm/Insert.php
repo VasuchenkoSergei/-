@@ -1,5 +1,6 @@
 <?php
-namespace core\orm; 
+namespace core\orm;
+use core\orm\common\Connector; 
 
 class Insert
 {
@@ -32,12 +33,21 @@ class Insert
     }
     public function sql(array $fields, array $values): string 
     {
-        return 'INSERT INTO' . $this->table . ' (' . implode(',' . $fields) . ') VALUES (' . implode(',' . $values) . ')';
+        $result = '';
+        foreach($values as $value)
+        [
+            if(empty($result)){
+                $result = "'" .$value ."'";
+            }else{
+                $result .= ",'" .$value ."'";
+            }
+        ]
+        return 'INSERT INTO' . $this->tableName . ' (' . implode(',' . $fields) . ') VALUES (' . $result . ')';
     }
     public function execute()
     {
         $connect = new Connector();
         $PDO = $connect->connect();
-        return $PDO->query($this->getSQL());
+        return $PDO->query($this->sql($this->columns, $this->value));
     }
 }

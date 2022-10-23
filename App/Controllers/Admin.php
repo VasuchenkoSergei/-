@@ -1,17 +1,27 @@
 <?php
 namespace App\Controllers;
-use App\Models\User;
+use App\Models\Posts;
 
 class Admin implements ControllerInterface
 {
     public function index()
     {
-        $obj = new User;
-       return var_dump($obj->getAll());
+        $obj = new Posts;
+        $path = 'view1';
+        $data['people'] = $obj->getAll();
+        View::generate($path, $data);
+        
     }
-    public function admin()
+    public function edit()
     {
-        return var_dump('i am admin\edit');
-    }
+            $result = array_filter($_POST);
+            if (!empty($result)) {
+                $obj-> new Data();
+                $obj->createUser($resultgit);
+            }
+    
+            $path = 'Admin' . DIRECTORY_SEPARATOR . 'Insert';
+            View::generate($path);
+    }       
 }
 ?>

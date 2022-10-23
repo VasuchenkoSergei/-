@@ -11,11 +11,17 @@ public function index()
     $path = 'view1';
     $data['people'] = $obj->getAll();
     View::generate($path, $data);
-    //var_dump ($obj->getAll());
 }
 public function admin()
     {
-        return var_dump('i am home\edit');
+        $result = array_filter($_POST);
+        if (!empty($result)) {
+            $obj-> new Data();
+            $obj->createUser($resultgit);
+        }
+
+        $path = 'Home' . DIRECTORY_SEPARATOR . 'Insert';
+        View::generate($path);
     }
 }
 ?>

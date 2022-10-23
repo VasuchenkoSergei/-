@@ -7,7 +7,7 @@ class User
 {
 public function index() 
 {
-    $obj = new Data();
+    $obj = new Data;
     $path = 'view1';
     $data['people'] = $obj->getAll();
     View::generate($path, $data);
@@ -15,7 +15,12 @@ public function index()
 }
 public function edit()
     {
-        $obj-> new Data();
+        $result = array_filter($_POST);
+        if (!empty($result)) {
+            $obj-> new Data();
+            $obj->createUser($resultgit);
+        }
+
         $path = 'User' . DIRECTORY_SEPARATOR . 'Insert';
         View::generate($path);
     }

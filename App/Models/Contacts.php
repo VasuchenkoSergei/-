@@ -1,15 +1,23 @@
 <?php
 namespace App\Models;
+use core\orm\Select;
 class Contacts
 {
-    public function getAll (): array
-   {
-    return $arr_contacts = [
-        'cont'=>'1234567892',
-        'cont'=>'2564532146',
-        'cont'=>'2564542166',
-        'cont'=>'2564895611',
-    ];
-
-   } 
+    public function getAll(): array
+    {
+     $select = new Select();
+     $select->setTablename('contacts');
+     $data = $select->execut();
+     $rows = $data->fetchAll(\PDO::FETCH_ASSOC);
+     return $rows;
+ 
+    } 
+    public function createUser(array $data): void 
+    {
+       $objInsert = new Insert();
+       $objInsert->setColumns(array_keys($data));
+       $objInsert->setColumns(array_values($data));
+       $objInsert->setTablename('contacts');
+       $objInsert->execute();
+    }
 }
