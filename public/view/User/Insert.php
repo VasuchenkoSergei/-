@@ -3,19 +3,19 @@
 form action="" class="p-4 shadow rounded" method="POST">
 <div class="mb-3">
     <label for="id" class="form-label fs-3">Id</label>
-    <input type="text" class="form-control" id="title" name="title">
+    <input type="text" class="form-control" id="id" name="id">
 </div>
 <div class="mb-3">
     <label for="data" class="form-label fs-3">Data</label>
-    <textarea id="body" class="form-control h-50" name="body"></textarea>
+    <input type="text" class="form-control" id="data" name="data">
 </div>
 <div class="mb-3">
     <label for="create_at" class="form-label fs-3">Create_at</label>
-    <textarea id="body" class="form-control h-50" name="body"></textarea>
+    <input type="text" class="form-control" id="create_at" name="create_at">
 </div>
 <div class="mb-3">
     <label for="update_at" class="form-label fs-3">Update_at</label>
-    <textarea id="body" class="form-control h-50" name="body"></textarea>
+    <input type="text" class="form-control" id="update_at" name="update_at">
 </div>
 <button type="submit" class="btn btn-primary w-100 p-2 text-uppercase fs-5">
     create

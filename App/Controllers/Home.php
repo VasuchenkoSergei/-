@@ -12,7 +12,7 @@ public function index()
     $data['people'] = $obj->getAll();
     View::generate($path, $data);
 }
-public function admin()
+public function edit()
     {
         $result = array_filter($_POST);
         if (!empty($result)) {
