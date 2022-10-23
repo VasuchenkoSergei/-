@@ -13,11 +13,11 @@ class Posts
     
     } 
        public function createUser(array $data): void 
-       {
+    {
           $objInsert = new Insert();
           $objInsert->setColumns(array_keys($data));
           $objInsert->setColumns(array_values($data));
           $objInsert->setTablename('posts');
           $objInsert->execute();
-       }
+    }
 }

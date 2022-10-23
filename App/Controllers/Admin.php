@@ -6,7 +6,7 @@ class Admin implements ControllerInterface
 {
     public function index()
     {
-        $obj = new Posts;
+        $obj = new Posts();
         $path = 'view1';
         $data['people'] = $obj->getAll();
         View::generate($path, $data);

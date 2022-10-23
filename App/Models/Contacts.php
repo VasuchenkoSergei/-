@@ -6,7 +6,7 @@ class Contacts
     public function getAll(): array
     {
      $select = new Select();
-     $select->setTablename('contacts');
+     $select->setTableName('contacts');
      $data = $select->execut();
      $rows = $data->fetchAll(\PDO::FETCH_ASSOC);
      return $rows;

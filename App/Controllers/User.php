@@ -7,7 +7,7 @@ class User
 {
 public function index() 
 {
-    $obj = new Data;
+    $obj = new Data();
     $path = 'view1';
     $data['people'] = $obj->getAll();
     View::generate($path, $data);

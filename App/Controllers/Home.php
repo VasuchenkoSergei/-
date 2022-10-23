@@ -7,7 +7,7 @@ class Home
 {
 public function index() 
 {
-    $obj = new Contacts;
+    $obj = new Contacts();
     $path = 'view1';
     $data['people'] = $obj->getAll();
     View::generate($path, $data);

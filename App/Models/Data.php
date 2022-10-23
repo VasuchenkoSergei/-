@@ -6,7 +6,7 @@ class Data
    public function getAll(): array
    {
     $select = new Select();
-    $select->setTablename('users');
+    $select->setTableName('users');
     $data = $select->execut();
     $rows = $data->fetchAll(\PDO::FETCH_ASSOC);
     return $rows;
