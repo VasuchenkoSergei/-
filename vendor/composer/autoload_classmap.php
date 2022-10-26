@@ -7,15 +7,17 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Controllers\\Admin' => $baseDir . '/app/Controllers/Admin.php',
+    'App\\Controllers\\Auth' => $baseDir . '/app/Controllers/Auth.php',
     'App\\Controllers\\Eror' => $baseDir . '/app/Controllers/Eror.php',
     'App\\Controllers\\Home' => $baseDir . '/app/Controllers/Home.php',
     'App\\Controllers\\User' => $baseDir . '/app/Controllers/User.php',
-    'App\\Models\\Birth' => $baseDir . '/app/Models/Birth.php',
     'App\\Models\\Contacts' => $baseDir . '/app/Models/Contacts.php',
     'App\\Models\\Data' => $baseDir . '/app/Models/Data.php',
-    'App\\Models\\Floor' => $baseDir . '/app/Models/Floor.php',
-    'App\\Models\\Plot' => $baseDir . '/app/Models/Plot.php',
+    'App\\Models\\Posts' => $baseDir . '/app/Models/Posts.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Core\\Router' => $baseDir . '/core/Router.php',
     'Core\\View' => $baseDir . '/core/View.php',
+    'Core\\orm\\Insert' => $baseDir . '/core/orm/Insert.php',
+    'Core\\orm\\Select' => $baseDir . '/core/orm/Select.php',
+    'Core\\orm\\common\\Connector' => $baseDir . '/core/orm/common/Connector.php',
 );

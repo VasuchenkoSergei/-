@@ -1,10 +1,12 @@
 <?php
-namespace core\orm;
+namespace Core\orm;
+use Core\orm\common\Connector;
 
 class Select
 {
     protected $tablename;
     protected $columns = '*';
+    protected $where = '';
     public function getTablename()
     {
         return $this->tablename;
@@ -12,6 +14,14 @@ class Select
     public function setTablename($tablename) : void
     {
         $this->tablename = $tablename;
+    }
+    public function getWhere($where) 
+    {
+        return $this->where = $where;
+    }
+    public function setWhere($where) : void
+    {
+        $this->where = $where;
     }
     public function getColumns()
     {
@@ -23,7 +33,11 @@ class Select
     }
     public function getSQL() : string
     {
-        return 'SELECT ' .$this->columns. ' FROM '. $this->tablename; 
+        $sql = 'SELECT ' .$this->columns. ' FROM '. $this->tablename;
+        if (!emti($this->where)){
+            $sql .= ' WHERE ' . $this->where;
+        }
+        return $sql;
     }
     public function execute()
     {

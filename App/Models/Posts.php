@@ -1,13 +1,14 @@
 <?php
 namespace App\Models;
-use core\orm\Select;
+use Core\orm\Select;
+use Core\orm\Insert;
 class Posts
 {
     public function getAll (): array
     {
         $select = new Select();
         $select->setTablename('posts');
-        $data = $select->execut();
+        $data = $select->execute();
         $rows = $data->fetchAll(\PDO::FETCH_ASSOC);
         return $rows;
     

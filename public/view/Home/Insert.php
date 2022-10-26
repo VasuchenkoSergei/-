@@ -1,4 +1,4 @@
-<?php
+
 <html>
 form action="" class="p-4 shadow rounded" method="POST">
 <div class="mb-3">

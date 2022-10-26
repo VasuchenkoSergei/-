@@ -8,4 +8,6 @@ return [
     'admin/home/edit'=>'Admin:edit',
     'user'=>'User:index',
     'user/edit'=>'User:edit',
+    'login'=>'Auth:login',
+    'register'=>'Auth:register',
 ];

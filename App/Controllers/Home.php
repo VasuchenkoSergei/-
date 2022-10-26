@@ -16,7 +16,7 @@ public function edit()
     {
         $result = array_filter($_POST);
         if (!empty($result)) {
-            $obj-> new Data();
+            $obj = new Contacts();
             $obj->createUser($resultgit);
         }
 

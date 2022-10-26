@@ -16,7 +16,7 @@ class Admin implements ControllerInterface
     {
             $result = array_filter($_POST);
             if (!empty($result)) {
-                $obj-> new Data();
+                $obj = new Posts();
                 $obj->createUser($resultgit);
             }
     

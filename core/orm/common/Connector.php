@@ -1,5 +1,5 @@
 <?php
-namespace core\orm\common;
+namespace Core\orm\common;
 class Connector
 {
     private $dsn;

@@ -1,6 +1,6 @@
 <?php
-namespace core\orm;
-use core\orm\common\Connector; 
+namespace Core\orm;
+use Core\orm\common\Connector; 
 
 class Insert
 {

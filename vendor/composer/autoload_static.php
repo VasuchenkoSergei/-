@@ -30,17 +30,19 @@ class ComposerStaticInit689d95828761d14f2555be4eec9c7d43
 
     public static $classMap = array (
         'App\\Controllers\\Admin' => __DIR__ . '/../..' . '/app/Controllers/Admin.php',
+        'App\\Controllers\\Auth' => __DIR__ . '/../..' . '/app/Controllers/Auth.php',
         'App\\Controllers\\Eror' => __DIR__ . '/../..' . '/app/Controllers/Eror.php',
         'App\\Controllers\\Home' => __DIR__ . '/../..' . '/app/Controllers/Home.php',
         'App\\Controllers\\User' => __DIR__ . '/../..' . '/app/Controllers/User.php',
-        'App\\Models\\Birth' => __DIR__ . '/../..' . '/app/Models/Birth.php',
         'App\\Models\\Contacts' => __DIR__ . '/../..' . '/app/Models/Contacts.php',
         'App\\Models\\Data' => __DIR__ . '/../..' . '/app/Models/Data.php',
-        'App\\Models\\Floor' => __DIR__ . '/../..' . '/app/Models/Floor.php',
-        'App\\Models\\Plot' => __DIR__ . '/../..' . '/app/Models/Plot.php',
+        'App\\Models\\Posts' => __DIR__ . '/../..' . '/app/Models/Posts.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Core\\Router' => __DIR__ . '/../..' . '/core/Router.php',
         'Core\\View' => __DIR__ . '/../..' . '/core/View.php',
+        'Core\\orm\\Insert' => __DIR__ . '/../..' . '/core/orm/Insert.php',
+        'Core\\orm\\Select' => __DIR__ . '/../..' . '/core/orm/Select.php',
+        'Core\\orm\\common\\Connector' => __DIR__ . '/../..' . '/core/orm/common/Connector.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

@@ -1,13 +1,14 @@
 <?php
 namespace App\Models;
-use core\orm\Select;
+use Core\orm\Select;
+use Core\orm\Insert;
 class Contacts
 {
     public function getAll(): array
     {
      $select = new Select();
-     $select->setTableName('contacts');
-     $data = $select->execut();
+     $select->setTablename('contacts');
+     $data = $select->execute();
      $rows = $data->fetchAll(\PDO::FETCH_ASSOC);
      return $rows;
  
@@ -19,5 +20,14 @@ class Contacts
        $objInsert->setColumns(array_values($data));
        $objInsert->setTablename('contacts');
        $objInsert->execute();
+    }
+    public function auth($email, $password): bool 
+    {
+        $objSelect = new Select;
+        $objSelect->setWhere("email='" . $email . "' AND password = '" .$password . "'");
+        $objSelect->setTablename('cotacts');
+        $data = $objSelect->execut();
+        $result = $data->fetchAll(\PDO::FETCH_ASSOC);
+        return !empty($result);
     }
 }
