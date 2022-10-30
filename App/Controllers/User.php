@@ -23,6 +23,10 @@ public function edit()
 
         $path = 'User' . DIRECTORY_SEPARATOR . 'Insert';
         View::generate($path);
+        $path = 'User' . DIRECTORY_SEPARATOR . 'Update';
+        View::generate($path);
+        $path = 'User' . DIRECTORY_SEPARATOR . 'Delete';
+        View::generate($path);
     }
 }
 ?>

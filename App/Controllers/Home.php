@@ -22,6 +22,10 @@ public function edit()
 
         $path = 'Home' . DIRECTORY_SEPARATOR . 'Insert';
         View::generate($path);
+        $path = 'Home' . DIRECTORY_SEPARATOR . 'Update';
+        View::generate($path);
+        $path = 'Home' . DIRECTORY_SEPARATOR . 'Delete';
+        View::generate($path);
     }
 }
 ?>
