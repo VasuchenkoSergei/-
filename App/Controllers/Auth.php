@@ -1,7 +1,7 @@
 <?php
 namespace App\Controllers;
-use App\Models\Contacts
-use Core\Wiev;
+use App\Models\Contacts;
+use Core\View;
 
 class Auth
 {
@@ -10,7 +10,7 @@ class Auth
         $data = array_filter($_POST);
         if (!empty($data)) {
             $obj = new Contacts();
-            $obj->auth($data['email'], $data['password']);
+            $_SESSION ['user'] = $result = $obj->auth($data['email'], $data['password']);
         }
         View::generate('auth/login', $data);
     }

@@ -1,8 +1,9 @@
 <?php
 namespace App\Controllers;
 use App\Models\Posts;
+use Core\View;
 
-class Admin implements ControllerInterface
+class Admin 
 {
     public function index()
     {

@@ -40,8 +40,11 @@ class ComposerStaticInit689d95828761d14f2555be4eec9c7d43
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Core\\Router' => __DIR__ . '/../..' . '/core/Router.php',
         'Core\\View' => __DIR__ . '/../..' . '/core/View.php',
+        'Core\\orm\\Delete' => __DIR__ . '/../..' . '/core/orm/Delete.php',
         'Core\\orm\\Insert' => __DIR__ . '/../..' . '/core/orm/Insert.php',
         'Core\\orm\\Select' => __DIR__ . '/../..' . '/core/orm/Select.php',
+        'Core\\orm\\Update' => __DIR__ . '/../..' . '/core/orm/Update.php',
+        'Core\\orm\\Where' => __DIR__ . '/../..' . '/core/orm/Where.php',
         'Core\\orm\\common\\Connector' => __DIR__ . '/../..' . '/core/orm/common/Connector.php',
     );
 

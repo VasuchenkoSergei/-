@@ -1,12 +1,18 @@
 <?php
 namespace Core\orm;
 use Core\orm\common\Connector;
+use Core\orm\Where;
 
 class Select
 {
     protected $tablename;
     protected $columns = '*';
-    protected $where = '';
+
+    public function where($condition)
+    {
+        $this->where = new Where;
+        $this->where->setWhere($condition);    
+    }
     public function getTablename()
     {
         return $this->tablename;
@@ -15,14 +21,7 @@ class Select
     {
         $this->tablename = $tablename;
     }
-    public function getWhere($where) 
-    {
-        return $this->where = $where;
-    }
-    public function setWhere($where) : void
-    {
-        $this->where = $where;
-    }
+
     public function getColumns()
     {
         return $this->columns;
@@ -34,8 +33,8 @@ class Select
     public function getSQL() : string
     {
         $sql = 'SELECT ' .$this->columns. ' FROM '. $this->tablename;
-        if (!emti($this->where)){
-            $sql .= ' WHERE ' . $this->where;
+        if (!empty($this->where)){
+            $sql .= $this->where->getWhere();
         }
         return $sql;
     }

@@ -1,5 +1,6 @@
 <?php
 namespace Core\orm\common;
+use PDO;
 class Connector
 {
     private $dsn;
@@ -7,16 +8,17 @@ class Connector
     private $password;
     public function __construct()
     {
-        $params = include_once (__DIR__) . '/../config/param.php';
+        $params = include(__DIR__) . '/../config/param.php';
         $host = $params['host'] ?? '';
-        $host = $params['dbname'] ?? '';
+        $dbname = $params['dbname'] ?? '';
         $this->dsn = 'mysql:host=' . $host .';dbname='. $dbname;
         $this->username = $params['username'] ?? '';
         $this->password = $params['password'] ?? '';
+        var_dump($this->dsn);
     }
     public function connect()
     {
-        return New \PDO ($this->dsn, $this->username, $this->password);
+        return new PDO($this->dsn, $this->username, $this->password);
     }
 
 }

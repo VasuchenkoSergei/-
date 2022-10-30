@@ -24,9 +24,9 @@ class Contacts
     public function auth($email, $password): bool 
     {
         $objSelect = new Select;
-        $objSelect->setWhere("email='" . $email . "' AND password = '" .$password . "'");
+        $objSelect->where("email='" . $email . "' AND password = '" .$password . "'");
         $objSelect->setTablename('cotacts');
-        $data = $objSelect->execut();
+        $data = $objSelect->execute();
         $result = $data->fetchAll(\PDO::FETCH_ASSOC);
         return !empty($result);
     }

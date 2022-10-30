@@ -1,4 +1,4 @@
-form action="" class="p-4 shadow rounded" method="POST">
+<form action="" class="p-4 shadow rounded" method="POST">
 <div class="mb-3">
     <label for="login">Login</label>
     <input type="login" class="form-control" id="login" name="login">
@@ -7,7 +7,7 @@ form action="" class="p-4 shadow rounded" method="POST">
     <label for="Имя">Password</label>
     <input type="name" class="form-control" id="nane" name="name">
 </div>
-form action="" class="p-4 shadow rounded" method="POST">
+<form action="" class="p-4 shadow rounded" method="POST">
 <div class="mb-3">
     <label for="Телефон">Login</label>
     <input type="Телефон" class="form-control" id="Телефон" name="Телефон">

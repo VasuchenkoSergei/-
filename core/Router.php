@@ -10,7 +10,7 @@ class Router
     public function __construct()
     {
         $this->exp = substr($_SERVER ["REQUEST_URI"],1);
-        $this->config = include_once (__DIR__) . '/../app/config/config.php';
+        $this->config = include (__DIR__) . '/../app/config/config.php';
     }
 
     public function run()
